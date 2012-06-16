@@ -51,7 +51,7 @@ myApp.directive('uiEpicEditor', function() {
                
                 // we get body dom element, because this is contenteditable=true                
                 // http://stackoverflow.com/questions/6256342/trigger-an-event-when-contenteditable-is-changed
-                var contents = $('.changeable').html();
+                var contents = $('body',iFrameEditor).html();
                 $('body',iFrameEditor).blur(function() {
                     console.log('BLUR!',this,$(this));
                     if (contents!=$(this).html()){
