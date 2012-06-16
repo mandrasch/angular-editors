@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pagedown Bootstrap Editor meets AngularJS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../lib/jquery-1.7.2.min.js"></script>
+        <script src="../../lib/angular-1.0.0.js" ng:autobind></script>
+
+        <!-- assets -->
+        <link rel="stylesheet/less" href="assets/demo.less">
+        <script src="assets/less/less-1.2.2.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap-transition.js"></script>
+        <script src="assets/bootstrap/js/bootstrap-modal.js"></script>
+        <script src="assets/bootstrap/js/bootstrap-tooltip.js"></script>
+        <script type="text/javascript" src="assets/Markdown.Converter.js"></script>
+        <script type="text/javascript" src="assets/Markdown.Sanitizer.js"></script>
+        <script type="text/javascript" src="assets/Markdown.Editor.js"></script>
+        <!-- eo assets -->
+     
+        <script src="../../lib/app.js"></script>
+        <script src="directive.js"></script>
+        
+    </head>
+    <body>
+
+        <div ng:app="myApp">
+            <div ng:controller="Tester">
+
+                <h2>Pagedown Bootstrap</h2>
+
+                <p>Available at: <a href="https://github.com/samwillis/pagedown-bootstrap">https://github.com/samwillis/pagedown-bootstrap</a></p>
+                
+                <p>Some strange things happen here, because data binding works, but only occasionally?</p>
+                
+                <div class="boxes">
+                    <div ng:repeat="box in boxes">
+                        <h1>{{box.name}}</h1>
+                        <textarea ui:pagedown-bootstrap ng:model="box.content"></textarea>
+                        Content in normal textbox (additional binding):<br /> <textarea ng:model="box.content"></textarea>
+                    </div>
+                </div>
+                <h1>data:</h1>        
+                <pre>{{boxes}}</pre>
+
+            </div>​
+    </body>
+</html>

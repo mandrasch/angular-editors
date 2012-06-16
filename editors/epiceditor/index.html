@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pagedown Bootstrap Editor meets AngularJS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../lib/jquery-1.7.2.min.js"></script>
+        <script src="../../lib/angular-1.0.0.js" ng:autobind></script>
+
+        <!-- assets -->
+        <script src="assets/js/epiceditor.js"></script>
+        <!-- eo assets -->
+     
+        <script src="../../lib/app.js"></script>
+        <script src="directive.js"></script>
+        
+    </head>
+    <body>
+
+        <div ng:app="myApp">
+            <div ng:controller="Tester">
+
+                <h2>Epic Editor</h2>
+
+                <p>Available at: <a href="http://epiceditor.com/">http://epiceditor.com/</a></p>
+
+                <p>Uses contenteditable=true (HTML5) instead of textareas. Not perfect by now, because of this: <a href="https://github.com/OscarGodson/EpicEditor/issues/131#issuecomment-6373306">https://github.com/OscarGodson/EpicEditor/issues/131#issuecomment-6373306</a></p>
+                
+                <div class="boxes">
+                    <div ng:repeat="box in boxes">
+                        <h1>{{box.name}}</h1>
+                        <textarea ui:epic-editor ng:model="box.content"></textarea>
+                        Content in normal textbox (additional binding):<br /> <textarea ng:model="box.content"></textarea>
+                    </div>
+                </div>
+                <h1>data:</h1>        
+                <pre>{{boxes}}</pre>
+
+            </div>​
+    </body>
+</html>

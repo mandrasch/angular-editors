@@ -1,0 +1,15 @@
+/* 
+    Document   : main.css
+    Created on : 16.06.2012, 18:16:11
+    Author     : admin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    font-family:'Arial',serif;
+}
